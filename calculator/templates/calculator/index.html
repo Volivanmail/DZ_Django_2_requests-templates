@@ -7,8 +7,10 @@
 <body>
 <h1>{{name}}</h1>
     <p>Порций:{{servings}}
-    {% for key, value in ingridients.items %}
-        <p>{{key}} - {% widthratio value 1 servings %}</p>
+    {% for key, value in ingredients.items %}
+        <p>{{key}} - {{value}}</p>
     {% endfor %}
 </body>
 </html>
+
+

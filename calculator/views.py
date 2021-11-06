@@ -25,8 +25,10 @@ def recipes_views (request, name):
     lot = 1
     if servings:
         lot = int(servings)
+    ingridients = DATA.get(name)
+    ingridients.update({(x, y * lot) for x, y in ingridients.items()})
     context = {
-        'ingridients': DATA.get(name),
+        'ingredients': ingridients,
         'name': name,
         'servings': lot
     }
